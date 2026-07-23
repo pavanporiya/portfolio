@@ -1,0 +1,505 @@
+/* ==========================================================================
+   FEATURED PROJECTS SECTION STYLESHEET
+   File: assets/css/projects.css
+   Architecture: ITCSS Layer 06-Components / Featured Projects
+   Description: Production-ready styling for the Featured Projects section.
+                Displays high-priority technical engineering projects in an
+                accessible, responsive grid with category filtering, featured
+                project layouts, hover elevations, technology badges, and
+                call-to-action buttons.
+   Design System Compliance: Uses design tokens from assets/css/variables.css
+   Visual Aesthetics: Luxury Black, Minimal, Modern, Elegant (No generic templates)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. PROJECTS SECTION WRAPPER & AMBIENT BACKGROUND
+   ========================================================================== */
+
+.projects-section {
+  position: relative;
+  padding-top: clamp(var(--space-8, 4rem), 8vh, var(--space-16, 8rem));
+  padding-bottom: clamp(var(--space-8, 4rem), 8vh, var(--space-16, 8rem));
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Ambient dark mesh lighting effect for luxury subtle background depth */
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(20, 184, 166, 0.04) 0%,
+    rgba(15, 23, 42, 0) 70%
+  );
+  pointer-events: none;
+  z-index: var(--z-negative, -1);
+}
+
+.projects-container {
+  width: 100%;
+  max-width: var(--container-max-width, 1280px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4, 1rem);
+  padding-right: var(--space-4, 1rem);
+}
+
+@media (min-width: 768px) {
+  .projects-container {
+    padding-left: var(--space-6, 2rem);
+    padding-right: var(--space-6, 2rem);
+  }
+}
+
+
+/* ==========================================================================
+   2. SECTION HEADER & INTRO TEXT
+   ========================================================================== */
+
+.projects-section .section-header {
+  margin-bottom: clamp(var(--space-6, 2.5rem), 5vh, var(--space-8, 4rem));
+  max-width: var(--content-normal, 75ch);
+}
+
+.projects-section .section-title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-2);
+}
+
+.projects-section .section-subtitle {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body);
+  max-width: var(--content-narrow, 65ch);
+}
+
+
+/* ==========================================================================
+   3. CATEGORY FILTER TAB CONTROLS
+   ========================================================================== */
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2, 0.75rem);
+  margin-bottom: clamp(var(--space-6, 2rem), 4vh, var(--space-8, 3rem));
+  padding: var(--space-1, 0.25rem);
+}
+
+.filter-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  min-height: 44px;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.filter-tab:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-tertiary);
+  border-color: var(--color-slate-700);
+}
+
+.filter-tab.active,
+.filter-tab[aria-selected="true"] {
+  color: var(--color-slate-950);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: 0 0 15px rgba(45, 212, 191, 0.25);
+}
+
+.filter-tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-color: var(--color-teal-400);
+}
+
+
+/* ==========================================================================
+   4. RESPONSIVE PROJECTS GRID
+   ========================================================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--card-gap, 2rem);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ==========================================================================
+   5. STANDARD PROJECT CARD & FEATURED LAYOUT
+   ========================================================================== */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(45, 212, 191, 0.35);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.project-card:focus-within {
+  border-color: var(--color-teal-400);
+  box-shadow: var(--shadow-md), var(--focus-ring);
+}
+
+/* Featured Project Layout (Prominent spanning layout on larger viewports) */
+.project-card.featured {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 1024px) {
+  .project-card.featured {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+  }
+
+  .project-card.featured .project-media {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 340px;
+  }
+
+  .project-card.featured .project-body {
+    padding: var(--space-6, 2.5rem);
+    justify-content: center;
+  }
+}
+
+
+/* ==========================================================================
+   6. PROJECT MEDIA & IMAGE CONTAINER
+   ========================================================================== */
+
+.project-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--color-slate-900);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform var(--transition-slow) var(--ease-out);
+  will-change: transform;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.03);
+}
+
+/* Image fallback skeleton background */
+.project-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    var(--color-slate-900) 8%,
+    var(--color-slate-800) 18%,
+    var(--color-slate-900) 33%
+  );
+  background-size: 200% 100%;
+  z-index: var(--z-negative, -1);
+}
+
+
+/* ==========================================================================
+   7. PROJECT BODY & CONTENT
+   ========================================================================== */
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: var(--space-4, 1.5rem);
+  gap: var(--space-3, 1rem);
+}
+
+.project-title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-title {
+  color: var(--color-accent);
+}
+
+.project-description {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body);
+  margin: 0;
+  flex-grow: 1;
+}
+
+
+/* ==========================================================================
+   8. TECHNOLOGY BADGES
+   ========================================================================== */
+
+.project-tech {
+  margin-top: var(--space-2, 0.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.tech-stack-title {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.tech-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-slate-300);
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.project-card:hover .tech-tag {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.tech-tag:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-surface);
+}
+
+
+/* ==========================================================================
+   9. ACTION BUTTONS & PROJECT LINKS
+   ========================================================================== */
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2, 0.75rem);
+  margin-top: var(--space-3, 1rem);
+  padding-top: var(--space-2, 0.5rem);
+}
+
+.project-links .btn-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* GitHub secondary link styling */
+.project-links .btn-link[href*="github.com"] {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+}
+
+.project-links .btn-link[href*="github.com"]:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-slate-700);
+  border-color: var(--color-slate-500);
+  transform: translateY(-1px);
+}
+
+/* Live Demo primary/accent link styling */
+.project-links .btn-link:not([href*="github.com"]) {
+  color: var(--color-slate-950);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+.project-links .btn-link:not([href*="github.com"]):hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.3);
+  transform: translateY(-1px);
+}
+
+.project-links .btn-link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+
+/* ==========================================================================
+   10. EMPTY STATE & DISABLED DEMO STYLING
+   ========================================================================== */
+
+.empty-demo-state,
+.btn-link.disabled,
+.btn-link[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.projects-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-8, 3rem) var(--space-4, 1.5rem);
+  background-color: var(--color-bg-secondary);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-muted);
+}
+
+.projects-empty-state p {
+  margin: 0;
+  font-size: var(--font-size-body);
+}
+
+
+/* ==========================================================================
+   11. ACCESSIBILITY & HIGH CONTRAST MODES
+   ========================================================================== */
+
+@media (forced-colors: active) {
+  .project-card {
+    border: 2px solid CanvasText;
+  }
+
+  .filter-tab {
+    border: 1px solid CanvasText;
+  }
+
+  .filter-tab.active,
+  .filter-tab[aria-selected="true"] {
+    border: 2px solid Highlight;
+    background-color: Highlight;
+    color: HighlightText;
+  }
+
+  .tech-tag {
+    border: 1px solid CanvasText;
+  }
+
+  .project-links .btn-link {
+    border: 1px solid CanvasText;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-img,
+  .filter-tab,
+  .project-links .btn-link,
+  .tech-tag {
+    transition: none !important;
+    transform: none !important;
+  }
+}
