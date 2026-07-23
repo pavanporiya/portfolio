@@ -6,15 +6,21 @@ export const initContact = () => {
 
   if (!form) return;
 
+  let isSubmitting = false;
+  let feedbackTimeout = null;
+  let fadeTimeout = null;
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
 
     const nameInput = $('#contact-name');
     const emailInput = $('#contact-email');
     const messageInput = $('#contact-message');
     const submitBtn = $('#contact-submit-btn');
 
-    if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+    if (!nameInput?.value.trim() || !emailInput?.value.trim() || !messageInput?.value.trim()) {
       showFeedback('Please complete all required fields.', 'error');
       return;
     }
@@ -24,8 +30,11 @@ export const initContact = () => {
       return;
     }
 
-    submitBtn.disabled = true;
-    setText(submitBtn, 'Sending Message...');
+    isSubmitting = true;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      setText(submitBtn, 'Sending...');
+    }
 
     try {
       const response = await fetch('/api/contact', {
@@ -43,9 +52,6 @@ export const initContact = () => {
 
       const data = await response.json();
 
-      submitBtn.disabled = false;
-      setText(submitBtn, 'Send Message');
-
       if (!response.ok) {
         showFeedback(data.message || 'Failed to send message.', 'error');
         return;
@@ -57,23 +63,42 @@ export const initContact = () => {
     } catch (error) {
       console.error(error);
 
-      submitBtn.disabled = false;
-      setText(submitBtn, 'Send Message');
-
       showFeedback(
         'Something went wrong. Please try again later.',
         'error'
       );
+    } finally {
+      isSubmitting = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        setText(submitBtn, 'Send Message');
+      }
     }
   });
 
   function showFeedback(msg, type) {
     if (!feedback) return;
+
+    if (feedbackTimeout) clearTimeout(feedbackTimeout);
+    if (fadeTimeout) clearTimeout(fadeTimeout);
+
+    feedback.style.opacity = '1';
+    feedback.style.transition = 'opacity 0.4s ease';
     setText(feedback, msg);
     feedback.className = `form-feedback form-feedback--${type}`;
+
+    feedbackTimeout = setTimeout(() => {
+      feedback.style.opacity = '0';
+      fadeTimeout = setTimeout(() => {
+        setText(feedback, '');
+        feedback.className = 'form-feedback';
+        feedback.style.opacity = '1';
+      }, 400);
+    }, 4000);
   }
 
   function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 };
+
