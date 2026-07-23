@@ -5,13 +5,13 @@ export const initNavigation = () => {
   const header = $('#site-header');
   const toggleBtn = $('#nav-toggle');
   const menu = $('#nav-menu');
-  const navLinks = $$('.header__link');
+  const navLinks = $$('.nav-link');
   const sections = $$('section[id]');
 
   // Mobile Drawer Toggle
   if (toggleBtn && menu) {
     toggleBtn.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('is-open');
+      const isOpen = menu.classList.toggle('is-active');
       toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   }

@@ -1,21 +1,27 @@
 /* ==========================================================================
-   05-COMPONENTS / EXPERIENCE
-   Work experience timeline, role cards, company details, key highlights.
+   05-COMPONENTS / TIMELINE (formerly Experience)
+   Learning journey timeline cards with vertical line indicator.
    ========================================================================== */
 
-.experience {
-  padding: var(--space-16) 0;
-  background-color: var(--bg-secondary);
+.timeline-section {
+  background-color: var(--bg-primary);
 }
 
-.timeline {
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--space-6), 4vw, var(--space-8));
+  list-style: none;
+  padding: 0;
+  padding-left: var(--space-8);
+  margin: 0;
   position: relative;
   max-width: 900px;
-  margin: 0 auto;
-  padding-left: var(--space-8);
+  margin-inline: auto;
 }
 
-.timeline::before {
+/* Vertical timeline line */
+.timeline-list::before {
   content: '';
   position: absolute;
   top: 0;
@@ -25,19 +31,17 @@
   background-color: var(--border-color);
 }
 
-.timeline__item {
+.timeline-item {
   position: relative;
-  margin-bottom: var(--space-12);
+  width: 100%;
 }
 
-.timeline__item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline__dot {
+/* Timeline dot */
+.timeline-item::before {
+  content: '';
   position: absolute;
   left: calc(-1 * var(--space-8) + 3px);
-  top: 6px;
+  top: var(--space-6);
   width: 18px;
   height: 18px;
   border-radius: var(--radius-full);
@@ -46,52 +50,59 @@
   z-index: 1;
 }
 
-.timeline__content {
+.timeline-card {
   background-color: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast);
 }
 
-.timeline__header {
+.timeline-card:hover {
+  border-color: var(--accent-primary);
+}
+
+.timeline-header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
   margin-bottom: var(--space-4);
 }
 
 @media (min-width: 640px) {
-  .timeline__header {
-    flex-direction: row;
-    justify-content: space-between;
+  .timeline-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: baseline;
   }
 }
 
-.timeline__role {
+.role-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.role-title {
   font-size: var(--font-size-lg);
   color: var(--text-primary);
 }
 
-.timeline__company {
+.company-name {
   color: var(--accent-primary);
   font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
 }
 
-.timeline__period {
+.role-period {
   font-size: var(--font-size-xs);
   font-family: var(--font-family-mono);
   color: var(--text-muted);
 }
 
-.timeline__bullets {
-  list-style: disc;
-  padding-left: var(--space-6);
-  color: var(--text-secondary);
-}
-
-.timeline__bullets li {
-  margin-bottom: var(--space-2);
+.role-summary {
   font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-body);
 }

@@ -1,57 +1,89 @@
 /* ==========================================================================
    05-COMPONENTS / CONTACT
-   Recruiter contact form, info cards, input fields, validation states.
+   Contact section: intro, direct contact card, accessible message form.
    ========================================================================== */
 
-.contact {
-  padding: var(--space-16) 0;
+.contact-section {
+  background-color: var(--bg-secondary);
 }
 
-.contact__grid {
+.contact-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-12);
+  gap: clamp(var(--space-6), 4vw, var(--space-10));
+  align-items: start;
 }
 
 @media (min-width: 1024px) {
-  .contact__grid {
+  .contact-container {
     grid-template-columns: 1fr 1.2fr;
   }
 }
 
-.contact__info-cards {
+.contact-intro {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-.contact-card {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-4) var(--space-6);
+.contact-heading {
+  font-size: var(--font-size-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.contact-direct-card {
   background-color: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: var(--radius-lg);
-  transition: border-color var(--transition-fast);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
 }
 
-.contact-card:hover {
-  border-color: var(--accent-primary);
-}
-
-.contact-card__icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background-color: var(--accent-surface);
-  color: var(--accent-primary);
+.contact-details-list {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.form {
+.contact-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+@media (min-width: 640px) {
+  .contact-detail-item {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+}
+
+.detail-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+.contact-link {
+  font-size: var(--font-size-sm);
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-link:hover {
+  color: var(--accent-hover);
+}
+
+/* Contact Form */
+.contact-form-container {
+  width: 100%;
+}
+
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
@@ -61,20 +93,40 @@
   padding: var(--space-8);
 }
 
-.form__group {
+.form-heading {
+  font-size: var(--font-size-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.form-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  width: 100%;
 }
 
-.form__label {
+.form-label {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--text-primary);
 }
 
-.form__input,
-.form__textarea {
+.required-indicator {
+  color: var(--rose-500);
+}
+
+.form-input,
+.form-textarea {
   width: 100%;
   padding: var(--space-3) var(--space-4);
   background-color: var(--bg-tertiary);
@@ -85,19 +137,19 @@
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.form__input:focus,
-.form__textarea:focus {
+.form-input:focus,
+.form-textarea:focus {
   outline: none;
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 3px var(--accent-surface);
 }
 
-.form__textarea {
+.form-textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-.form__feedback {
+.form-feedback {
   font-size: var(--font-size-xs);
   margin-top: var(--space-1);
 }
@@ -108,4 +160,10 @@
 
 .form__feedback--success {
   color: var(--emerald-500);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }

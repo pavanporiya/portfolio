@@ -1,13 +1,14 @@
 /* ==========================================================================
    01-SETTINGS / VARIABLES
-   Primitive design tokens, system values, spacing scales, and breakpoints.
+   Comprehensive design tokens — single source of truth for all CSS values.
    ========================================================================== */
 
 :root {
-  /* ------------------------------------------------------------------------
-     Color Palette - Primitives
-     ------------------------------------------------------------------------ */
-  /* Neutral Scale */
+  /* ========================================================================
+     1. COLOR SYSTEM
+     ======================================================================== */
+
+  /* Neutral Scale (Slate) */
   --slate-50:  #f8fafc;
   --slate-100: #f1f5f9;
   --slate-200: #e2e8f0;
@@ -20,26 +21,60 @@
   --slate-900: #0f172a;
   --slate-950: #020617;
 
-  /* Accent Scale (Teal / Cyan Cyber-Industrial Tone) */
+  /* Accent Scale (Teal) */
   --teal-400:  #2dd4bf;
   --teal-500:  #14b8a6;
   --teal-600:  #0d9488;
   --teal-700:  #0f766e;
   --teal-900:  #134e4a;
 
-  /* Supporting Colors */
-  --indigo-500: #6366f1;
-  --amber-500:  #f59e0b;
-  --rose-500:   #f43f5e;
+  /* Status Colors */
   --emerald-500: #10b981;
+  --amber-500:   #f59e0b;
+  --rose-500:    #f43f5e;
+  --indigo-500:  #6366f1;
 
-  /* ------------------------------------------------------------------------
-     Typography Tokens
-     ------------------------------------------------------------------------ */
+  /* ========================================================================
+     2. SEMANTIC COLOR TOKENS — Dark Mode (Default)
+     ======================================================================== */
+
+  /* Background */
+  --bg-primary:      var(--slate-950);
+  --bg-secondary:    var(--slate-900);
+  --bg-tertiary:     var(--slate-800);
+  --bg-glass:        rgba(15, 23, 42, 0.75);
+
+  /* Text */
+  --text-primary:    var(--slate-50);
+  --text-secondary:  var(--slate-400);
+  --text-muted:      var(--slate-500);
+  --text-inverse:    var(--slate-900);
+
+  /* Borders */
+  --border-color:    rgba(255, 255, 255, 0.08);
+  --border-hover:    var(--teal-500);
+
+  /* Accent */
+  --accent-primary:  var(--teal-400);
+  --accent-hover:    var(--teal-500);
+  --accent-surface:  rgba(20, 184, 166, 0.1);
+
+  /* Cards */
+  --card-bg:         var(--slate-900);
+  --card-border:     rgba(255, 255, 255, 0.08);
+
+  /* Functional */
+  --focus-ring:      var(--teal-400);
+  --shadow-color:    rgba(0, 0, 0, 0.5);
+
+  /* ========================================================================
+     3. TYPOGRAPHY
+     ======================================================================== */
+
   --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-mono: 'JetBrains Mono', Consolas, Monaco, 'Andale Mono', monospace;
 
-  /* Fluid Font Sizes (using clamp) */
+  /* Fluid Font Sizes */
   --font-size-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --font-size-sm:   clamp(0.875rem, 0.83rem + 0.25vw, 1rem);
   --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
@@ -51,59 +86,73 @@
   --font-size-5xl:  clamp(2.75rem, 2.2rem + 2.75vw, 4rem);
 
   /* Font Weights */
-  --font-weight-regular: 400;
-  --font-weight-medium:  500;
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
   --font-weight-semibold: 600;
   --font-weight-bold:     700;
 
   /* Line Heights */
-  --line-height-tight:  1.15;
+  --line-height-tight:   1.15;
   --line-height-heading: 1.25;
   --line-height-body:    1.6;
+  --line-height-relaxed: 1.75;
 
-  /* ------------------------------------------------------------------------
-     Spacing & Layout Tokens
-     ------------------------------------------------------------------------ */
-  --space-1:  0.25rem; /* 4px */
-  --space-2:  0.5rem;  /* 8px */
-  --space-3:  0.75rem; /* 12px */
-  --space-4:  1rem;    /* 16px */
-  --space-6:  1.5rem;  /* 24px */
-  --space-8:  2rem;    /* 32px */
-  --space-12: 3rem;    /* 48px */
-  --space-16: 4rem;    /* 64px */
-  --space-24: 6rem;    /* 96px */
+  /* ========================================================================
+     4. SPACING (8px base grid)
+     ======================================================================== */
+
+  --space-1:  0.25rem;  /* 4px */
+  --space-2:  0.5rem;   /* 8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* ========================================================================
+     5. LAYOUT
+     ======================================================================== */
 
   --container-max-width: 1200px;
-  --header-height: 4.5rem;
+  --header-height:       4.5rem;
+  --header-height-mobile: 3.75rem;
 
-  /* ------------------------------------------------------------------------
-     Borders & Radius
-     ------------------------------------------------------------------------ */
-  --radius-sm:  0.25rem;
-  --radius-md:  0.5rem;
-  --radius-lg:  0.75rem;
-  --radius-xl:  1rem;
+  /* ========================================================================
+     6. BORDERS & RADIUS
+     ======================================================================== */
+
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
   --radius-full: 9999px;
 
-  /* ------------------------------------------------------------------------
-     Elevations & Shadows
-     ------------------------------------------------------------------------ */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  /* ========================================================================
+     7. SHADOWS
+     ======================================================================== */
+
+  --shadow-sm:   0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  --shadow-md:   0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -2px rgba(0, 0, 0, 0.15);
+  --shadow-lg:   0 10px 15px -3px rgba(0, 0, 0, 0.35), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
   --shadow-glow: 0 0 20px rgba(20, 184, 166, 0.25);
 
-  /* ------------------------------------------------------------------------
-     Transitions & Motion
-     ------------------------------------------------------------------------ */
+  /* ========================================================================
+     8. TRANSITIONS & MOTION
+     ======================================================================== */
+
   --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow:   350ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* ------------------------------------------------------------------------
-     Z-Index Hierarchy
-     ------------------------------------------------------------------------ */
+  /* ========================================================================
+     9. Z-INDEX HIERARCHY
+     ======================================================================== */
+
   --z-negative: -1;
   --z-normal:   1;
   --z-header:   100;

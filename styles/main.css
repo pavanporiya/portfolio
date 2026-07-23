@@ -20,16 +20,16 @@
 @import "./04-elements/_typography.css";
 
 /* 05. Components */
+@import "./05-components/_layout.css";
 @import "./05-components/_header.css";
 @import "./05-components/_hero.css";
-@import "./05-components/_metrics.css";
+@import "./05-components/_about.css";
 @import "./05-components/_projects.css";
 @import "./05-components/_experience.css";
 @import "./05-components/_skills.css";
 @import "./05-components/_github.css";
 @import "./05-components/_contact.css";
 @import "./05-components/_footer.css";
-@import "./05-components/_modal.css";
 @import "./05-components/_buttons.css";
 
 /* 06. Utilities */

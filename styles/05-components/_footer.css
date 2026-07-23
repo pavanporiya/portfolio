@@ -1,46 +1,67 @@
 /* ==========================================================================
    05-COMPONENTS / FOOTER
-   Footer layout, copyright links, social icons, back-to-top button.
+   Site footer landmark, copyright, back to top link, social media links.
    ========================================================================== */
 
-.footer {
+.site-footer {
   padding: var(--space-8) 0;
   border-top: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
 }
 
-.footer__inner {
+.footer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
   text-align: center;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-4), 3vw, var(--space-8));
 }
 
 @media (min-width: 640px) {
-  .footer__inner {
+  .footer-container {
     flex-direction: row;
     text-align: left;
   }
 }
 
-.footer__text {
+.footer-copyright p {
   font-size: var(--font-size-sm);
   color: var(--text-muted);
+  margin-bottom: 0;
 }
 
-.footer__socials {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.footer__social-link {
+.back-to-top-link {
+  font-size: var(--font-size-sm);
   color: var(--text-secondary);
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-.footer__social-link:hover {
+.back-to-top-link:hover {
+  color: var(--accent-primary);
+}
+
+.footer-social-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-link {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.social-link:hover {
   color: var(--accent-primary);
 }
