@@ -27,13 +27,44 @@ export const initContact = () => {
     submitBtn.disabled = true;
     setText(submitBtn, 'Sending Message...');
 
-    // Simulate API network request
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          subject: $('#contact-subject')?.value.trim() || 'Portfolio Contact',
+          message: messageInput.value.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
       submitBtn.disabled = false;
       setText(submitBtn, 'Send Message');
+
+      if (!response.ok) {
+        showFeedback(data.message || 'Failed to send message.', 'error');
+        return;
+      }
+
       form.reset();
       showFeedback('Thank you! Your message has been sent successfully.', 'success');
-    }, 1000);
+
+    } catch (error) {
+      console.error(error);
+
+      submitBtn.disabled = false;
+      setText(submitBtn, 'Send Message');
+
+      showFeedback(
+        'Something went wrong. Please try again later.',
+        'error'
+      );
+    }
   });
 
   function showFeedback(msg, type) {
