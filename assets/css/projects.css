@@ -380,6 +380,18 @@
   padding-top: var(--space-2, 0.5rem);
 }
 
+/* Center single action button horizontally when card has only one button */
+.project-links:has(> .btn-link:only-child),
+.project-links:has(> a:only-child) {
+  justify-content: center;
+}
+
+.project-links > .btn-link:only-child,
+.project-links > a:only-child {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-links .btn-link {
   display: inline-flex;
   align-items: center;

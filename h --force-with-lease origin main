@@ -1,0 +1,13 @@
+* [33m992feb0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m feat: production-ready portfolio and resume
+[31m|[m * [33m207df75[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #1 from pavanporiya/portfolio-v2
+[31m|[m[31m/[m[33m|[m 
+[31m|[m * [33meaef656[m[33m ([m[1;31morigin/portfolio-v2[m[33m, [m[1;32mportfolio-v2[m[33m)[m refactor: repair architecture, consolidate CSS/JS, and remove fabricated content
+[31m|[m[31m/[m  
+* [33m7e30758[m feat: complete portfolio frontend implementation and production preparation
+* [33me19d4fd[m feat: implement about section styles
+* [33me49f349[m feat: implement premium hero section styles
+* [33md1af790[m feat: implement semantic HTML structure
+*   [33m96b7661[m Merge branch 'main' of https://github.com/pavanporiya/portfolio
+[34m|[m[35m\[m  
+[34m|[m * [33m1613711[m Update README.md
+[34m|[m * [33m0d61d40[m chore: initialize portfolio project
