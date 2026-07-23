@@ -8,7 +8,6 @@
  */
 
 import { Observer } from '../../js/core/observer.js';
-import { initTheme } from '../../js/modules/theme.js';
 import { initNavigation } from '../../js/modules/navigation.js';
 import { initProjects } from '../../js/modules/projects.js';
 import { initExperience } from '../../js/modules/experience.js';
@@ -67,7 +66,6 @@ function bootstrapApp() {
   detectReducedMotion();
   initScrollBehavior();
 
-  safeInit('Theme', initTheme);
   safeInit('Observer', runObserverInit);
   safeInit('Navigation', initNavigation);
   safeInit('Animations', initAnimations);

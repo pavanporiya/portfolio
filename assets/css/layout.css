@@ -124,12 +124,6 @@ div[id] {
   align-items: center;
 }
 
-.nav-controls {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2, 0.5rem);
-}
-
 /* Mobile Navigation Layout Adjustments */
 @media (max-width: 768px) {
   .primary-nav {

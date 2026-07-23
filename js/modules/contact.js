@@ -39,7 +39,7 @@ export const initContact = () => {
   function showFeedback(msg, type) {
     if (!feedback) return;
     setText(feedback, msg);
-    feedback.className = `form__feedback form__feedback--${type}`;
+    feedback.className = `form-feedback form-feedback--${type}`;
   }
 
   function validateEmail(email) {

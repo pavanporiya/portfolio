@@ -1,5 +1,4 @@
 import { EventBus } from './event-bus.js';
-import { THEMES } from '../config/theme-config.js';
 
 /**
  * Central State Store
@@ -7,7 +6,6 @@ import { THEMES } from '../config/theme-config.js';
 class StateStore {
   constructor() {
     this.state = {
-      theme: THEMES.DARK,
       activeSection: 'hero',
       projectFilter: 'all',
       isMobileNavOpen: false,

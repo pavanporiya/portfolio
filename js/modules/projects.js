@@ -1,7 +1,7 @@
 import { $, $$ } from '../utils/dom.js';
 
 export const initProjects = () => {
-  const filterBtns = $$('.projects__filter-btn');
+  const filterBtns = $$('.filter-tab');
   const projectCards = $$('.project-card');
   const modal = $('#project-modal');
   const modalCloseBtn = $('#modal-close-btn');
@@ -9,8 +9,14 @@ export const initProjects = () => {
   // Filter Handling
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('is-active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
       btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
 
       const filter = btn.dataset.filter;
 

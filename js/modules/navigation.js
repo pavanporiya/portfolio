@@ -4,15 +4,32 @@ import { debounce } from '../utils/debounce.js';
 export const initNavigation = () => {
   const header = $('#site-header');
   const toggleBtn = $('#nav-toggle');
+  const primaryNav = $('#primary-nav');
   const menu = $('#nav-menu');
-  const navLinks = $$('.header__link');
+  const navLinks = $$('.nav-link, .header__link');
   const sections = $$('section[id]');
 
   // Mobile Drawer Toggle
-  if (toggleBtn && menu) {
-    toggleBtn.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('is-open');
+  if (toggleBtn && (primaryNav || menu)) {
+    const toggleMenu = (forceState) => {
+      const targetNav = primaryNav || menu;
+      const isOpen = typeof forceState === 'boolean' 
+        ? forceState 
+        : !targetNav.classList.contains('is-open');
+
+      targetNav.classList.toggle('is-open', isOpen);
+      if (menu && menu !== targetNav) menu.classList.toggle('is-open', isOpen);
+
       toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      toggleBtn.classList.toggle('is-active', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+    };
+
+    toggleBtn.addEventListener('click', () => toggleMenu());
+
+    // Close drawer when clicking nav links
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
     });
   }
 
@@ -27,9 +44,16 @@ export const initNavigation = () => {
 
       if (scrollPos >= top && scrollPos < top + height) {
         navLinks.forEach(link => {
-          link.classList.remove('is-active');
-          if (link.getAttribute('href') === `#${id}`) {
+          const href = link.getAttribute('href');
+          if (href === `#${id}` || href === `index.html#${id}`) {
+            link.classList.add('active');
             link.classList.add('is-active');
+          } else if (!href || (!href.includes('#') && !link.hasAttribute('aria-current'))) {
+            link.classList.remove('active');
+            link.classList.remove('is-active');
+          } else if (href.includes('#') && href !== `#${id}` && href !== `index.html#${id}`) {
+            link.classList.remove('active');
+            link.classList.remove('is-active');
           }
         });
       }

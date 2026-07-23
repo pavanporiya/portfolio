@@ -5,7 +5,6 @@ export const CONFIG = {
   GITHUB_USERNAME: 'pavanporiya',
   GITHUB_API_URL: 'https://api.github.com/users/pavanporiya/repos?sort=updated&per_page=6',
   STORAGE_KEYS: {
-    THEME: 'pavan_portfolio_theme',
     GITHUB_CACHE: 'pavan_portfolio_github_cache',
     GITHUB_CACHE_TIME: 'pavan_portfolio_github_cache_time'
   },

@@ -3,7 +3,7 @@
    File: assets/css/navigation.css
    Architecture: ITCSS Layer 06-Components / Website Navigation
    Description: Production-ready CSS for site header, sticky navigation, desktop link
-                states, logo styling, theme toggle, hamburger button, mobile drawer,
+                states, logo styling, hamburger button, mobile drawer,
                 and overlay backdrop.
    Design Influence: Apple, Linear, Vercel, Stripe (Minimalist, Accessible, Premium)
    ========================================================================== */
@@ -36,7 +36,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   1.1 Scrolled Navigation State (Applied via JS class or data attribute)
+   1.1 Scrolled Navigation State
    -------------------------------------------------------------------------- */
 
 .site-header.is-scrolled,
@@ -155,12 +155,14 @@
 }
 
 /* --------------------------------------------------------------------------
-   3.1 Navigation Links
+   3.1 Navigation Links - Unified Box Model & Flex Baseline
    -------------------------------------------------------------------------- */
 
 .nav-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  height: 2.25rem;
   padding: var(--space-1-5, 0.375rem) var(--space-2-5, 0.75rem);
   color: var(--color-text-secondary, #94a3b8);
   font-family: var(--font-family-sans);
@@ -169,9 +171,12 @@
   line-height: 1;
   text-decoration: none;
   border-radius: var(--radius-md, 0.375rem);
+  border: 1px solid transparent;
+  box-sizing: border-box;
   position: relative;
   transition: color var(--transition-fast),
-              background-color var(--transition-fast);
+              background-color var(--transition-fast),
+              border-color var(--transition-fast);
   outline: none;
 }
 
@@ -211,24 +216,6 @@
 }
 
 /* --------------------------------------------------------------------------
-   3.4 Special Nav CTA Link (e.g., Contact CTA)
-   -------------------------------------------------------------------------- */
-
-.nav-link.nav-cta,
-.nav-link[href="#contact"] {
-  color: var(--color-accent, #2dd4bf);
-  border: 1px solid var(--color-accent-surface, rgba(45, 212, 191, 0.3));
-  background-color: var(--color-accent-surface, rgba(45, 212, 191, 0.06));
-}
-
-.nav-link.nav-cta:hover,
-.nav-link[href="#contact"]:hover {
-  color: var(--color-slate-950, #020617);
-  background-color: var(--color-accent, #2dd4bf);
-  border-color: var(--color-accent, #2dd4bf);
-}
-
-/* --------------------------------------------------------------------------
    3.5 Keyboard Focus Styling
    -------------------------------------------------------------------------- */
 
@@ -239,91 +226,8 @@
 
 
 /* ==========================================================================
-   4. NAVIGATION CONTROLS (THEME TOGGLE & HAMBURGER)
+   4. HAMBURGER MOBILE MENU BUTTON
    ========================================================================== */
-
-.nav-controls {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2, 0.5rem);
-}
-
-/* --------------------------------------------------------------------------
-   4.1 Theme Toggle Button
-   -------------------------------------------------------------------------- */
-
-.btn-theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2, 0.5rem);
-  min-width: 2.25rem;
-  height: 2.25rem;
-  padding: 0 var(--space-2, 0.5rem);
-  background: transparent;
-  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
-  border-radius: var(--radius-pill, 9999px);
-  color: var(--color-text-secondary, #94a3b8);
-  font-family: var(--font-family-sans);
-  font-size: var(--font-size-xs, 0.75rem);
-  font-weight: var(--font-weight-medium, 500);
-  cursor: pointer;
-  transition: color var(--transition-fast),
-              background-color var(--transition-fast),
-              border-color var(--transition-fast);
-  outline: none;
-}
-
-.btn-theme-toggle:hover {
-  color: var(--color-text-primary, #f8fafc);
-  background-color: var(--color-accent-surface, rgba(45, 212, 191, 0.08));
-  border-color: var(--color-border-hover, #2dd4bf);
-}
-
-.btn-theme-toggle:focus-visible {
-  outline: var(--focus-ring-width, 2px) var(--focus-ring-style, solid) var(--focus-ring-color, #2dd4bf);
-  outline-offset: var(--focus-ring-offset, 2px);
-}
-
-.theme-icon {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform var(--transition-normal);
-}
-
-/* Dark mode sun/moon icon dynamic toggle */
-.theme-icon::before {
-  content: "☀️";
-  font-size: 0.875rem;
-  line-height: 1;
-}
-
-[data-theme="light"] .theme-icon::before,
-html.light .theme-icon::before {
-  content: "🌙";
-}
-
-.btn-theme-toggle:hover .theme-icon {
-  transform: rotate(15deg) scale(1.1);
-}
-
-.theme-label {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .theme-label {
-    display: inline;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   4.2 Hamburger Mobile Menu Button
-   -------------------------------------------------------------------------- */
 
 .btn-nav-toggle {
   display: none; /* Hidden on desktop by default */
@@ -494,24 +398,6 @@ html.light .theme-icon::before {
     width: 3px;
     height: 18px;
   }
-
-  .nav-controls {
-    width: 100%;
-    justify-content: space-between;
-    padding-top: var(--space-3, 0.75rem);
-    border-top: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
-    margin-top: var(--space-2, 0.5rem);
-  }
-
-  .btn-theme-toggle {
-    width: 100%;
-    justify-content: center;
-    height: 2.75rem;
-  }
-
-  .theme-label {
-    display: inline;
-  }
 }
 
 
@@ -570,7 +456,6 @@ body.nav-open::before {
   .brand-logo,
   .brand-name::after,
   .nav-link,
-  .btn-theme-toggle,
   .btn-nav-toggle,
   .nav-toggle-icon,
   .nav-toggle-icon::before,

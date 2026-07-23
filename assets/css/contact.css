@@ -1,0 +1,378 @@
+/* ==========================================================================
+   CONTACT SECTION STYLES
+   File: assets/css/contact.css
+   Description: Refined, recruiter-focused contact layout with equal visual height,
+                vertical alignment, enhanced form field spacing, custom input focus
+                states, responsive button, and hidden-by-default feedback.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SECTION & CONTAINER LAYOUT
+   -------------------------------------------------------------------------- */
+.contact-section {
+  position: relative;
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  background-color: var(--color-bg-primary, #020617);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr 1.05fr;
+    align-items: stretch; /* Equal visual height for both columns */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. LEFT COLUMN (INFO PANEL & DIRECT CHANNELS)
+   -------------------------------------------------------------------------- */
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contact-intro .section-title {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-slate-50, #f8fafc);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.contact-intro .section-subtitle {
+  font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+  color: var(--color-slate-400, #94a3b8);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.contact-direct-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-slate-900, #0f172a);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-xl, 1rem);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: border-color var(--transition-fast, 0.2s ease);
+}
+
+.contact-direct-card:hover {
+  border-color: rgba(45, 212, 191, 0.25);
+}
+
+.contact-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-slate-100, #f1f5f9);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.875rem 1.125rem;
+  background-color: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg, 0.75rem);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .contact-detail-item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.contact-detail-item:hover {
+  background-color: rgba(20, 184, 166, 0.06);
+  border-color: rgba(45, 212, 191, 0.2);
+  transform: translateX(3px);
+}
+
+.detail-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-teal-400, #2dd4bf);
+}
+
+.contact-link {
+  font-size: 0.95rem;
+  color: var(--color-slate-200, #e2e8f0);
+  font-weight: 500;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--color-teal-300, #5eead4);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. RIGHT COLUMN (CONTACT FORM)
+   -------------------------------------------------------------------------- */
+.contact-form-container {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: var(--color-slate-900, #0f172a);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-xl, 1rem);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: border-color var(--transition-fast, 0.2s ease);
+}
+
+.contact-form:focus-within {
+  border-color: rgba(45, 212, 191, 0.25);
+}
+
+.form-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-slate-100, #f1f5f9);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem; /* Increased spacing between form fields */
+  border: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-slate-300, #cbd5e1);
+}
+
+.required-indicator {
+  color: var(--color-teal-400, #2dd4bf);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   4. INPUT & TEXTAREA STYLING
+   -------------------------------------------------------------------------- */
+.form-input,
+.form-textarea {
+  width: 100%;
+  background-color: rgba(2, 6, 23, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg, 0.75rem);
+  color: var(--color-slate-50, #f8fafc);
+  font-family: var(--font-family-sans, inherit);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input {
+  height: 52px; /* Improved input height */
+  padding: 0 1.25rem;
+}
+
+.form-textarea {
+  min-height: 130px; /* Improved textarea height */
+  padding: 0.875rem 1.25rem;
+  resize: vertical;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-slate-500, #64748b);
+  opacity: 0.8;
+}
+
+.form-input:hover,
+.form-textarea:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(2, 6, 23, 0.65);
+}
+
+/* Subtle focus states */
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-teal-400, #2dd4bf);
+  background-color: rgba(2, 6, 23, 0.8);
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.15), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   5. SUBMIT BUTTON STYLING
+   -------------------------------------------------------------------------- */
+.form-actions {
+  display: flex;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.btn-submit {
+  width: 100%; /* Spans full width on mobile */
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-teal-500, #14b8a6) 0%, var(--color-teal-600, #0d9488) 100%);
+  color: var(--color-slate-950, #020617);
+  font-family: var(--font-family-sans, inherit);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: var(--radius-lg, 0.75rem);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(20, 184, 166, 0.25);
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease, opacity 0.25s ease;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, var(--color-teal-400, #2dd4bf) 0%, var(--color-teal-500, #14b8a6) 100%);
+  box-shadow: 0 6px 20px rgba(45, 212, 191, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
+}
+
+.btn-submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.4), 0 6px 20px rgba(45, 212, 191, 0.4);
+}
+
+.btn-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. FEEDBACK / SUCCESS MESSAGE
+   -------------------------------------------------------------------------- */
+.form-feedback {
+  display: none;
+  margin-top: 0.25rem;
+  padding: 0.875rem 1.125rem;
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hide by default when empty */
+.form-feedback:empty {
+  display: none !important;
+}
+
+/* Show ONLY after form submission when active */
+.form-feedback.form-feedback--success,
+.form-feedback.form__feedback--success {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--color-emerald-400, #34d399);
+}
+
+.form-feedback.form-feedback--success::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(16, 185, 129, 0.2);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-emerald-400, #34d399);
+  flex-shrink: 0;
+}
+
+.form-feedback.form-feedback--error,
+.form-feedback.form__feedback--error {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  color: var(--color-rose-400, #fb7185);
+}
+
+.form-feedback.form-feedback--error::before {
+  content: "!";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(244, 63, 94, 0.2);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-rose-400, #fb7185);
+  flex-shrink: 0;
+}
