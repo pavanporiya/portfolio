@@ -310,6 +310,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-4, 1rem);
+  align-items: start;
 }
 
 .skill-category-card {
@@ -319,6 +320,8 @@
   padding: var(--space-4, 1rem);
   display: flex;
   flex-direction: column;
+  align-self: start;
+  height: auto;
   gap: var(--space-3, 0.75rem);
 }
 
