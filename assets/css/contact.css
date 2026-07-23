@@ -134,11 +134,21 @@
   transition: color 0.2s ease;
 }
 
+.contact-link .external-icon {
+  display: inline-block;
+  transition: transform 250ms ease;
+}
+
 .contact-link:hover,
 .contact-link:focus-visible {
   color: var(--color-teal-300, #5eead4);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.contact-link:hover .external-icon,
+.contact-link:focus-visible .external-icon {
+  transform: translateX(2px);
 }
 
 /* --------------------------------------------------------------------------
