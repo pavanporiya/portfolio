@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
+  <!-- Basic Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pavan Poriya — Senior Software Engineer & System Architect</title>
-  <meta name="description" content="Senior Software Engineer and Technical Architect specializing in high-throughput distributed systems, cloud architecture, and modern scalable web applications.">
+  <meta name="description" content="Portfolio of Pavan Poriya, Senior Software Engineer and System Architect specializing in distributed systems, backend platforms, cloud infrastructure, and accessible web applications.">
   <meta name="author" content="Pavan Poriya">
+  <meta name="keywords" content="Pavan Poriya, Senior Software Engineer, System Architect, Distributed Systems, Backend Engineering, Go, Python, TypeScript, Node.js, Web Accessibility, HTML5">
   <meta name="robots" content="index, follow">
 
-  <!-- Canonical URL -->
+  <!-- Canonical URL Placeholder -->
   <link rel="canonical" href="https://pavanporiya.com/">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph Meta Placeholders -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pavanporiya.com/">
   <meta property="og:title" content="Pavan Poriya — Senior Software Engineer & System Architect">
-  <meta property="og:description" content="Portfolio of Pavan Poriya, Senior Software Engineer specializing in distributed systems, backend engineering, and high-performance cloud architecture.">
+  <meta property="og:description" content="Portfolio of Pavan Poriya, Senior Software Engineer specializing in high-throughput distributed systems, resilient cloud infrastructure, and modern web applications.">
   <meta property="og:image" content="https://pavanporiya.com/assets/images/og/og-image-1200x630.png">
+  <meta property="og:site_name" content="Pavan Poriya Portfolio">
 
-  <!-- Twitter Cards -->
+  <!-- Twitter Card Meta Placeholders -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://pavanporiya.com/">
+  <meta name="twitter:site" content="@pavanporiya">
+  <meta name="twitter:creator" content="@pavanporiya">
   <meta name="twitter:title" content="Pavan Poriya — Senior Software Engineer & System Architect">
-  <meta name="twitter:description" content="Portfolio of Pavan Poriya, Senior Software Engineer specializing in distributed systems, backend engineering, and high-performance cloud architecture.">
+  <meta name="twitter:description" content="Portfolio of Pavan Poriya, Senior Software Engineer specializing in high-throughput distributed systems, resilient cloud infrastructure, and modern web applications.">
   <meta name="twitter:image" content="https://pavanporiya.com/assets/images/og/og-image-1200x630.png">
 
-  <!-- Web Manifest & Favicon -->
+  <!-- Web Manifest and Favicon Placeholders -->
   <link rel="manifest" href="site.webmanifest">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/main.css">
-
-  <!-- Structured Data JSON-LD -->
+  <!-- Structured Data JSON-LD Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,50 +51,43 @@
       "Distributed Systems",
       "Backend Engineering",
       "Cloud Infrastructure",
-      "Performance Optimization"
+      "Web Accessibility"
     ]
   }
   </script>
-
-  <!-- ES6 Native Module App Entry -->
-  <script type="module" src="js/app.js"></script>
 </head>
 <body>
 
   <!-- Accessibility Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header Navigation Landmark -->
-  <header id="site-header" class="header" role="banner">
-    <div class="u-container header__inner">
-      <a href="#hero" class="header__logo" aria-label="Pavan Poriya Home">
-        Pavan<span class="header__logo-accent">.Poriya</span>
+  <!-- ========================================================
+       SECTION 1: HEADER & NAVIGATION LANDMARK
+       ======================================================== -->
+  <header id="site-header" role="banner">
+    <div>
+      <a href="#hero" aria-label="Pavan Poriya Home">
+        Pavan Poriya
       </a>
 
-      <nav id="primary-nav" class="header__nav" aria-label="Main Navigation">
-        <ul id="nav-menu" class="header__menu" role="list">
-          <li><a href="#hero" class="header__link is-active">Home</a></li>
-          <li><a href="#metrics" class="header__link">Impact</a></li>
-          <li><a href="#projects" class="header__link">Projects</a></li>
-          <li><a href="#experience" class="header__link">Experience</a></li>
-          <li><a href="#skills" class="header__link">Skills</a></li>
-          <li><a href="#github" class="header__link">GitHub</a></li>
-          <li><a href="#contact" class="header__link">Contact</a></li>
+      <nav id="primary-nav" aria-label="Primary Navigation">
+        <ul id="nav-menu" role="list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Featured Projects</a></li>
+          <li><a href="#github">GitHub</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <div class="header__actions">
-          <button id="theme-toggle" class="btn btn--secondary btn--icon" aria-label="Toggle theme color scheme">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
+        <div>
+          <button type="button" id="theme-toggle" aria-label="Toggle theme color scheme">
+            Toggle Theme
           </button>
 
-          <button id="nav-toggle" class="header__toggle" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="nav-menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
+          <button type="button" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+            Menu
           </button>
         </div>
       </nav>
@@ -103,377 +97,588 @@
   <!-- Main Content Landmark -->
   <main id="main-content" tabindex="-1">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero" aria-labelledby="hero-title">
-      <div class="u-container hero__grid">
-        <div class="hero__content">
-          <div class="hero__badge">
-            <span class="hero__badge-dot"></span>
-            Available for Senior & Lead Engineering Roles
-          </div>
-
-          <h1 id="hero-title" class="hero__title">
-            Architecting <span class="hero__title-gradient">Resilient Systems</span> & Scalable Backend Platforms
-          </h1>
-
-          <p class="hero__subtitle">
-            Senior Software Engineer with 7+ years of experience specializing in distributed caching, microservice architectures, high-concurrency data pipelines, and mission-critical cloud applications.
-          </p>
-
-          <div class="hero__actions">
-            <a href="#projects" class="btn btn--primary">View Systems Architecture</a>
-            <a href="assets/documents/Pavan_Poriya_Resume.pdf" class="btn btn--secondary" download>Download Resume (PDF)</a>
-          </div>
+    <!-- ========================================================
+         SECTION 2: HERO SECTION
+         ======================================================== -->
+    <section id="hero" aria-labelledby="hero-title">
+      <div>
+        <div>
+          <span aria-label="Current status">Available for Senior & Lead Engineering Roles</span>
         </div>
 
-        <div class="hero__visual">
-          <div class="hero__avatar-wrapper">
-            <img src="assets/images/hero/avatar-profile.webp" alt="Pavan Poriya - Senior Software Engineer" class="hero__avatar" fetchpriority="high" width="340" height="340" onerror="this.onerror=null; this.src='assets/images/common/placeholder.svg';">
-          </div>
+        <h1 id="hero-title">
+          Pavan Poriya — Senior Software Engineer & System Architect
+        </h1>
+
+        <p>
+          Architecting resilient, distributed backend platforms and scalable cloud solutions with 7+ years of engineering experience. Focused on high-concurrency systems, robust API infrastructure, clean modular design, and accessible web experiences.
+        </p>
+
+        <div>
+          <a href="#projects">View Featured Projects</a>
+          <a href="assets/documents/Pavan_Poriya_Resume.pdf" download aria-label="Download Pavan Poriya's Resume in PDF format">Download Resume (PDF)</a>
+          <a href="#contact">Get in Touch</a>
+        </div>
+
+        <div>
+          <figure>
+            <img src="assets/images/hero/avatar-profile.webp" alt="Pavan Poriya - Senior Software Engineer and System Architect" width="340" height="340" fetchpriority="high">
+            <figcaption class="sr-only">Profile photo of Pavan Poriya</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- Metrics Section -->
-    <section id="metrics" class="metrics reveal-on-scroll" aria-label="Key Performance & Impact Metrics">
-      <div class="u-container metrics__grid">
-        <article class="metrics__card">
-          <div class="metrics__number reveal-on-scroll" data-target="99" data-suffix=".99%">0%</div>
-          <div class="metrics__label">Uptime SLA Maintained</div>
-        </article>
+    <!-- ========================================================
+         SECTION 3: ABOUT SECTION
+         ======================================================== -->
+    <section id="about" aria-labelledby="about-title">
+      <div>
+        <h2 id="about-title">About Me</h2>
+        <p>Engineered for high performance, reliability, and long-term maintainability.</p>
 
-        <article class="metrics__card">
-          <div class="metrics__number reveal-on-scroll" data-target="10" data-suffix="M+">0</div>
-          <div class="metrics__label">Daily API Requests Handled</div>
-        </article>
-
-        <article class="metrics__card">
-          <div class="metrics__number reveal-on-scroll" data-target="45" data-suffix="%">0%</div>
-          <div class="metrics__label">Average Latency Reduction</div>
-        </article>
-
-        <article class="metrics__card">
-          <div class="metrics__number reveal-on-scroll" data-target="7" data-suffix="+ Yrs">0</div>
-          <div class="metrics__label">Production Systems Engineering</div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="projects" class="projects reveal-on-scroll" aria-labelledby="projects-title">
-      <div class="u-container">
-        <div class="projects__header">
-          <div>
-            <h2 id="projects-title">Featured Systems Architecture</h2>
-            <p>Production engineering projects, distributed platforms, and open-source systems.</p>
-          </div>
-
-          <div class="projects__filters" role="tablist" aria-label="Project Domain Filters">
-            <button class="projects__filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All Systems</button>
-            <button class="projects__filter-btn" data-filter="backend" role="tab" aria-selected="false">Backend & Distributed</button>
-            <button class="projects__filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud & Infrastructure</button>
-            <button class="projects__filter-btn" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack</button>
-          </div>
-        </div>
-
-        <div id="projects-grid" class="projects__grid">
-          <!-- Project Card 1 -->
-          <article class="project-card" data-category="backend">
-            <div class="project-card__thumb-wrapper">
-              <img src="assets/images/projects/system-architecture-thumb.webp" alt="Distributed Multi-Region Cache Engine" class="project-card__thumb" loading="lazy" width="800" height="450" onerror="this.onerror=null; this.src='assets/images/common/placeholder.svg';">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Distributed Multi-Region Cache Engine</h3>
-              <p class="project-card__desc">Low-latency key-value store with sub-millisecond read speeds, consistent hashing, and automated partition failover handling 50k+ QPS.</p>
-              <div class="project-card__tags">
-                <span class="project-card__tag">Go</span>
-                <span class="project-card__tag">gRPC</span>
-                <span class="project-card__tag">Redis</span>
-                <span class="project-card__tag">Docker</span>
-              </div>
-              <div class="project-card__actions">
-                <button class="btn btn--secondary" data-open-modal="distributed-cache">System Specs</button>
-                <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Source Code</a>
-              </div>
-            </div>
+        <div>
+          <article>
+            <h3>Professional Engineering Narrative</h3>
+            <p>
+              I am a Senior Software Engineer and Technical Architect with extensive experience designing and implementing mission-critical software platforms. My background spans high-throughput microservices, distributed caching, event-driven data pipelines, and cloud-native serverless deployments.
+            </p>
+            <p>
+              Throughout my career, I have prioritized Clean Code principles, robust automated test suites, and strict architectural scalability. I am dedicated to bridging technical complexity with business value, leading engineering initiatives that improve system reliability while delivering exceptional user experiences.
+            </p>
           </article>
 
-          <!-- Project Card 2 -->
-          <article class="project-card" data-category="cloud">
-            <div class="project-card__thumb-wrapper">
-              <img src="assets/images/projects/distributed-cache-thumb.webp" alt="Real-Time Event Ingestion Engine" class="project-card__thumb" loading="lazy" width="800" height="450" onerror="this.onerror=null; this.src='assets/images/common/placeholder.svg';">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Real-Time Event Ingestion Pipeline</h3>
-              <p class="project-card__desc">Event-driven telemetry processing pipeline ingesting microsecond-granularity telemetry stream via Kafka and ClickHouse analytics.</p>
-              <div class="project-card__tags">
-                <span class="project-card__tag">Python</span>
-                <span class="project-card__tag">Apache Kafka</span>
-                <span class="project-card__tag">Kubernetes</span>
-                <span class="project-card__tag">AWS</span>
+          <aside aria-label="Engineering Impact Statistics">
+            <h3>Key System & Performance Impact Metrics</h3>
+            <dl>
+              <div>
+                <dt>99.99%</dt>
+                <dd>Production System Uptime SLA Maintained</dd>
               </div>
-              <div class="project-card__actions">
-                <button class="btn btn--secondary" data-open-modal="event-pipeline">System Specs</button>
-                <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Source Code</a>
+              <div>
+                <dt>10M+</dt>
+                <dd>Daily API Requests Processed Reliably</dd>
               </div>
-            </div>
-          </article>
-
-          <!-- Project Card 3 -->
-          <article class="project-card" data-category="fullstack">
-            <div class="project-card__thumb-wrapper">
-              <img src="assets/images/projects/real-time-analytics-thumb.webp" alt="Enterprise API Gateway & Traffic Shaper" class="project-card__thumb" loading="lazy" width="800" height="450" onerror="this.onerror=null; this.src='assets/images/common/placeholder.svg';">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Enterprise API Gateway & Rate Limiter</h3>
-              <p class="project-card__desc">Centralized API gateway featuring token-bucket rate limiting, OAuth2 token verification, dynamic load balancing, and real-time metric tracing.</p>
-              <div class="project-card__tags">
-                <span class="project-card__tag">Node.js</span>
-                <span class="project-card__tag">TypeScript</span>
-                <span class="project-card__tag">PostgreSQL</span>
-                <span class="project-card__tag">Prometheus</span>
+              <div>
+                <dt>45%</dt>
+                <dd>Average P99 Latency Reduction across Microservices</dd>
               </div>
-              <div class="project-card__actions">
-                <button class="btn btn--secondary" data-open-modal="api-gateway">System Specs</button>
-                <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Source Code</a>
+              <div>
+                <dt>7+ Years</dt>
+                <dd>Production Systems Engineering & Technical Leadership</dd>
               </div>
-            </div>
-          </article>
+            </dl>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- Work Experience Section -->
-    <section id="experience" class="experience reveal-on-scroll" aria-labelledby="experience-title">
-      <div class="u-container">
-        <h2 id="experience-title">Professional Experience</h2>
-        <p>Proven track record of engineering leadership, system reliability, and product delivery.</p>
-
-        <div class="timeline">
-          <div class="timeline__item">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <div class="timeline__content">
-              <div class="timeline__header">
-                <div>
-                  <h3 class="timeline__role">Senior Software Engineer</h3>
-                  <span class="timeline__company">Enterprise Technology Solutions</span>
-                </div>
-                <span class="timeline__period">2022 — PRESENT</span>
-              </div>
-              <ul class="timeline__bullets" role="list">
-                <li>Architected distributed microservices platform processing 10M+ daily events with 99.99% system availability.</li>
-                <li>Led backend performance optimization initiative, decreasing average P99 latency by 45% across core APIs.</li>
-                <li>Mentored team of 6 engineers on clean code practices, automated CI/CD pipeline setup, and microservice resilience patterns.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline__item">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <div class="timeline__content">
-              <div class="timeline__header">
-                <div>
-                  <h3 class="timeline__role">Software Engineer</h3>
-                  <span class="timeline__company">Cloud Infrastructure & Systems Inc.</span>
-                </div>
-                <span class="timeline__period">2019 — 2022</span>
-              </div>
-              <ul class="timeline__bullets" role="list">
-                <li>Designed and implemented high-concurrency RESTful APIs using Node.js, Go, and PostgreSQL.</li>
-                <li>Migrated legacy monolithic applications to containerized Kubernetes deployments on AWS.</li>
-                <li>Integrated automated integration testing pipelines achieving 90%+ code coverage across critical service modules.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills reveal-on-scroll" aria-labelledby="skills-title">
-      <div class="u-container">
+    <!-- ========================================================
+         SECTION 4: SKILLS SECTION
+         ======================================================== -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div>
         <h2 id="skills-title">Technical Competencies & Stack</h2>
-        <p>Core engineering strengths, programming paradigms, and cloud infrastructure tools.</p>
+        <p>Core engineering strengths, programming languages, storage engines, and infrastructure tools.</p>
 
-        <div class="skills__grid">
-          <article class="skills__category">
-            <h3 class="skills__category-title">Backend & Distributed Systems</h3>
-            <div class="skills__list">
-              <span class="skill-chip">Go / Golang</span>
-              <span class="skill-chip">Python</span>
-              <span class="skill-chip">Node.js / TypeScript</span>
-              <span class="skill-chip">gRPC & Protobuf</span>
-              <span class="skill-chip">RESTful APIs</span>
-              <span class="skill-chip">GraphQL</span>
-            </div>
+        <div>
+          <!-- Domain Category 1 -->
+          <article aria-labelledby="skill-cat-1">
+            <h3 id="skill-cat-1">Languages & Core Engineering</h3>
+            <ul role="list">
+              <li>Go / Golang</li>
+              <li>Python</li>
+              <li>TypeScript</li>
+              <li>JavaScript (ES6+)</li>
+              <li>C / C++</li>
+              <li>SQL</li>
+            </ul>
           </article>
 
-          <article class="skills__category">
-            <h3 class="skills__category-title">Databases & Storage</h3>
-            <div class="skills__list">
-              <span class="skill-chip">PostgreSQL</span>
-              <span class="skill-chip">Redis</span>
-              <span class="skill-chip">MongoDB</span>
-              <span class="skill-chip">ClickHouse</span>
-              <span class="skill-chip">Apache Kafka</span>
-            </div>
+          <!-- Domain Category 2 -->
+          <article aria-labelledby="skill-cat-2">
+            <h3 id="skill-cat-2">Backend & Distributed Systems</h3>
+            <ul role="list">
+              <li>RESTful API Architecture</li>
+              <li>gRPC & Protocol Buffers</li>
+              <li>GraphQL</li>
+              <li>Microservice Architecture</li>
+              <li>Event-Driven Systems</li>
+              <li>Distributed Caching Protocols</li>
+            </ul>
           </article>
 
-          <article class="skills__category">
-            <h3 class="skills__category-title">Cloud & DevOps Infrastructure</h3>
-            <div class="skills__list">
-              <span class="skill-chip">AWS (EC2, S3, ECS, Lambda)</span>
-              <span class="skill-chip">Docker</span>
-              <span class="skill-chip">Kubernetes</span>
-              <span class="skill-chip">Terraform</span>
-              <span class="skill-chip">CI/CD (GitHub Actions)</span>
-              <span class="skill-chip">Prometheus & Grafana</span>
-            </div>
+          <!-- Domain Category 3 -->
+          <article aria-labelledby="skill-cat-3">
+            <h3 id="skill-cat-3">Databases & Storage</h3>
+            <ul role="list">
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>MongoDB</li>
+              <li>ClickHouse Analytics</li>
+              <li>Apache Kafka</li>
+              <li>Elasticsearch</li>
+            </ul>
           </article>
 
-          <article class="skills__category">
-            <h3 class="skills__category-title">Frontend Architecture</h3>
-            <div class="skills__list">
-              <span class="skill-chip">HTML5 / Semantic Web</span>
-              <span class="skill-chip">CSS3 (ITCSS, BEM)</span>
-              <span class="skill-chip">Vanilla JavaScript ES6+</span>
-              <span class="skill-chip">Web Performance</span>
-              <span class="skill-chip">WCAG 2.1 AA Accessibility</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- GitHub Live Integration Section -->
-    <section id="github" class="github reveal-on-scroll" aria-labelledby="github-title">
-      <div class="u-container">
-        <h2>Live Open Source & GitHub Activity</h2>
-        <p>Real-time data fetched from GitHub API. <span id="github-status-notice" class="u-text-muted"></span></p>
-
-        <div id="github-repos-grid" class="github__grid" aria-live="polite">
-          <!-- Fallback Repositories while loading or offline -->
-          <article class="github-card">
-            <div>
-              <div class="github-card__header">
-                <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" class="github-card__title">distributed-cache-go</a>
-              </div>
-              <p class="github-card__desc">In-memory distributed key-value cache engine with consistent hashing protocol.</p>
-            </div>
-            <div class="github-card__footer">
-              <div class="github-card__meta">
-                <span>Go</span>
-                <span>★ 124</span>
-              </div>
-              <span>GitHub Live</span>
-            </div>
+          <!-- Domain Category 4 -->
+          <article aria-labelledby="skill-cat-4">
+            <h3 id="skill-cat-4">Cloud & DevOps Infrastructure</h3>
+            <ul role="list">
+              <li>Amazon Web Services (AWS)</li>
+              <li>Docker & Containerization</li>
+              <li>Kubernetes</li>
+              <li>Terraform Infrastructure as Code</li>
+              <li>CI/CD (GitHub Actions)</li>
+              <li>Prometheus & Grafana Monitoring</li>
+            </ul>
           </article>
 
-          <article class="github-card">
-            <div>
-              <div class="github-card__header">
-                <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" class="github-card__title">event-stream-pipeline</a>
-              </div>
-              <p class="github-card__desc">Kafka-based telemetry stream processing engine built for microsecond latency.</p>
-            </div>
-            <div class="github-card__footer">
-              <div class="github-card__meta">
-                <span>Python</span>
-                <span>★ 88</span>
-              </div>
-              <span>GitHub Live</span>
-            </div>
+          <!-- Domain Category 5 -->
+          <article aria-labelledby="skill-cat-5">
+            <h3 id="skill-cat-5">Frontend Architecture & Web Standards</h3>
+            <ul role="list">
+              <li>Semantic HTML5</li>
+              <li>Modern CSS Architecture (ITCSS/BEM)</li>
+              <li>Vanilla JavaScript DOM APIs</li>
+              <li>WCAG 2.1 AA Accessibility Standards</li>
+              <li>Web Performance & Core Web Vitals</li>
+              <li>Progressive Web Applications (PWA)</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Recruiter Contact Section -->
-    <section id="contact" class="contact reveal-on-scroll" aria-labelledby="contact-title">
-      <div class="u-container contact__grid">
+    <!-- ========================================================
+         SECTION 5: FEATURED PROJECTS SECTION
+         ======================================================== -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div>
+        <div>
+          <h2 id="projects-title">Featured Projects</h2>
+          <p>Production engineering projects, distributed backend platforms, and full-stack software applications.</p>
+        </div>
+
+        <!-- Project Domain Filter Controls -->
+        <div role="tablist" aria-label="Project Category Filters">
+          <button type="button" role="tab" aria-selected="true" id="tab-all" aria-controls="projects-grid">All Projects</button>
+          <button type="button" role="tab" aria-selected="false" id="tab-backend" aria-controls="projects-grid">Backend & Distributed</button>
+          <button type="button" role="tab" aria-selected="false" id="tab-ai" aria-controls="projects-grid">AI & Automation</button>
+          <button type="button" role="tab" aria-selected="false" id="tab-fullstack" aria-controls="projects-grid">Full-Stack Apps</button>
+        </div>
+
+        <div id="projects-grid">
+
+          <!-- Project Card 1: VaultDocs -->
+          <article id="project-vaultdocs" aria-labelledby="proj-title-vaultdocs">
+            <figure>
+              <img src="assets/images/projects/vaultdocs-thumb.webp" alt="VaultDocs - Secure Document Archival System Interface" width="800" height="450" loading="lazy">
+              <figcaption class="sr-only">VaultDocs Secure Document Archival System</figcaption>
+            </figure>
+            <div>
+              <h3 id="proj-title-vaultdocs">VaultDocs</h3>
+              <p>
+                Enterprise-grade, end-to-end encrypted document archival and management system. Features fine-grained role-based access control (RBAC), automated cryptographic file integrity verification, and tamper-proof audit trail logging for regulatory compliance.
+              </p>
+              <div>
+                <h4>Technologies Used</h4>
+                <ul role="list">
+                  <li>Go</li>
+                  <li>PostgreSQL</li>
+                  <li>AWS S3</li>
+                  <li>Redis</li>
+                  <li>Docker</li>
+                </ul>
+              </div>
+              <div>
+                <a href="https://github.com/pavanporiya/vaultdocs" target="_blank" rel="noopener noreferrer" aria-label="View VaultDocs repository on GitHub">GitHub</a>
+                <a href="https://vaultdocs.example.com" target="_blank" rel="noopener noreferrer" aria-label="View VaultDocs live system demonstration">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2: Virtual AI Assistant -->
+          <article id="project-virtual-ai-assistant" aria-labelledby="proj-title-ai-assistant">
+            <figure>
+              <img src="assets/images/projects/virtual-ai-assistant-thumb.webp" alt="Virtual AI Assistant - Intelligent Voice & Text Agent Dashboard" width="800" height="450" loading="lazy">
+              <figcaption class="sr-only">Virtual AI Assistant Dashboard</figcaption>
+            </figure>
+            <div>
+              <h3 id="proj-title-ai-assistant">Virtual AI Assistant</h3>
+              <p>
+                Intelligent conversational AI agent integrated with modern LLM provider APIs, natural language processing (NLP) pipelines, and contextual memory vector databases. Performs automated task execution, multi-turn dialogue management, and external API tool calls.
+              </p>
+              <div>
+                <h4>Technologies Used</h4>
+                <ul role="list">
+                  <li>Python</li>
+                  <li>FastAPI</li>
+                  <li>OpenAI API</li>
+                  <li>LangChain</li>
+                  <li>Pinecone Vector DB</li>
+                </ul>
+              </div>
+              <div>
+                <a href="https://github.com/pavanporiya/virtual-ai-assistant" target="_blank" rel="noopener noreferrer" aria-label="View Virtual AI Assistant repository on GitHub">GitHub</a>
+                <a href="https://ai-assistant.example.com" target="_blank" rel="noopener noreferrer" aria-label="View Virtual AI Assistant live application demonstration">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3: Fitness App -->
+          <article id="project-fitness-app" aria-labelledby="proj-title-fitness-app">
+            <figure>
+              <img src="assets/images/projects/fitness-app-thumb.webp" alt="Fitness App - Performance Tracking & Analytics Platform Interface" width="800" height="450" loading="lazy">
+              <figcaption class="sr-only">Fitness App Performance Dashboard</figcaption>
+            </figure>
+            <div>
+              <h3 id="proj-title-fitness-app">Fitness App</h3>
+              <p>
+                Comprehensive health and athletic workout tracking platform offering real-time exercise telemetry, personalized fitness routine scheduling, interactive progress charts, and seamless cross-device synchronization.
+              </p>
+              <div>
+                <h4>Technologies Used</h4>
+                <ul role="list">
+                  <li>TypeScript</li>
+                  <li>React Native</li>
+                  <li>Node.js</li>
+                  <li>GraphQL</li>
+                  <li>PostgreSQL</li>
+                </ul>
+              </div>
+              <div>
+                <a href="https://github.com/pavanporiya/fitness-app" target="_blank" rel="noopener noreferrer" aria-label="View Fitness App repository on GitHub">GitHub</a>
+                <a href="https://fitness.example.com" target="_blank" rel="noopener noreferrer" aria-label="View Fitness App live demo">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 4: Task Manager -->
+          <article id="project-task-manager" aria-labelledby="proj-title-task-manager">
+            <figure>
+              <img src="assets/images/projects/task-manager-thumb.webp" alt="Task Manager - Collaborative Workflow Engine Interface" width="800" height="450" loading="lazy">
+              <figcaption class="sr-only">Task Manager Kanban Board Interface</figcaption>
+            </figure>
+            <div>
+              <h3 id="proj-title-task-manager">Task Manager</h3>
+              <p>
+                Real-time collaborative project and task management application. Implements interactive Kanban boards, WebSocket-powered instant state synchronization across clients, deadline push notifications, and detailed productivity reports.
+              </p>
+              <div>
+                <h4>Technologies Used</h4>
+                <ul role="list">
+                  <li>JavaScript</li>
+                  <li>Node.js</li>
+                  <li>WebSockets</li>
+                  <li>Express.js</li>
+                  <li>MongoDB</li>
+                </ul>
+              </div>
+              <div>
+                <a href="https://github.com/pavanporiya/task-manager" target="_blank" rel="noopener noreferrer" aria-label="View Task Manager repository on GitHub">GitHub</a>
+                <a href="https://taskmanager.example.com" target="_blank" rel="noopener noreferrer" aria-label="View Task Manager live web application">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 5: Shiv Watch Store -->
+          <article id="project-shiv-watch-store" aria-labelledby="proj-title-shiv-watch">
+            <figure>
+              <img src="assets/images/projects/shiv-watch-store-thumb.webp" alt="Shiv Watch Store - E-Commerce Luxury Platform Storefront" width="800" height="450" loading="lazy">
+              <figcaption class="sr-only">Shiv Watch Store E-Commerce Storefront</figcaption>
+            </figure>
+            <div>
+              <h3 id="proj-title-shiv-watch">Shiv Watch Store</h3>
+              <p>
+                High-performance e-commerce web platform for luxury timepieces. Built with responsive client-side filtering, real-time inventory management, dynamic shopping cart workflows, and secure payment processor integrations.
+              </p>
+              <div>
+                <h4>Technologies Used</h4>
+                <ul role="list">
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>ES6 JavaScript</li>
+                  <li>Node.js</li>
+                  <li>Stripe API</li>
+                </ul>
+              </div>
+              <div>
+                <a href="https://github.com/pavanporiya/shiv-watch-store" target="_blank" rel="noopener noreferrer" aria-label="View Shiv Watch Store repository on GitHub">GitHub</a>
+                <a href="https://shivwatchstore.example.com" target="_blank" rel="noopener noreferrer" aria-label="View Shiv Watch Store live storefront demonstration">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 6: Habit Tracker -->
+          <article id="project-habit-tracker" aria-labelledby="proj-title-habit-tracker">
+            <figure>
+              <img src="assets/images/projects/habit-tracker-thumb.webp" alt="Habit Tracker - Daily Goal Analytics Engine Interface" width="800" height="450" loading="lazy">
+              <figcaption class="sr-only">Habit Tracker Daily Goal Interface</figcaption>
+            </figure>
+            <div>
+              <h3 id="proj-title-habit-tracker">Habit Tracker</h3>
+              <p>
+                Minimalist personal productivity application designed for tracking daily habits, consistency streak monitoring, interactive completion stats visualization, and custom milestone alerts.
+              </p>
+              <div>
+                <h4>Technologies Used</h4>
+                <ul role="list">
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>JavaScript</li>
+                  <li>Web Storage API</li>
+                  <li>Chart.js</li>
+                </ul>
+              </div>
+              <div>
+                <a href="https://github.com/pavanporiya/habit-tracker" target="_blank" rel="noopener noreferrer" aria-label="View Habit Tracker repository on GitHub">GitHub</a>
+                <a href="https://habittracker.example.com" target="_blank" rel="noopener noreferrer" aria-label="View Habit Tracker live web application">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 6: GITHUB SECTION
+         ======================================================== -->
+    <section id="github" aria-labelledby="github-title">
+      <div>
+        <h2 id="github-title">Live Open Source & GitHub Activity</h2>
+        <p>Public open-source repositories and code contributions on GitHub. <span id="github-status-notice" aria-live="polite"></span></p>
+
+        <div id="github-repos-grid">
+          <!-- Fallback Repository 1 -->
+          <article aria-labelledby="repo-title-1">
+            <div>
+              <h3 id="repo-title-1">
+                <a href="https://github.com/pavanporiya/distributed-cache-go" target="_blank" rel="noopener noreferrer">distributed-cache-go</a>
+              </h3>
+              <p>In-memory distributed key-value cache engine in Go with consistent hashing protocol and automated partition failover.</p>
+            </div>
+            <div>
+              <span>Language: Go</span>
+              <span>Stargazers: ★ 124</span>
+              <span>Forks: 32</span>
+              <a href="https://github.com/pavanporiya/distributed-cache-go" target="_blank" rel="noopener noreferrer" aria-label="View distributed-cache-go on GitHub">View Repo</a>
+            </div>
+          </article>
+
+          <!-- Fallback Repository 2 -->
+          <article aria-labelledby="repo-title-2">
+            <div>
+              <h3 id="repo-title-2">
+                <a href="https://github.com/pavanporiya/event-stream-pipeline" target="_blank" rel="noopener noreferrer">event-stream-pipeline</a>
+              </h3>
+              <p>Kafka-based telemetry stream processing engine built for microsecond ingestion latency and ClickHouse OLAP analytics.</p>
+            </div>
+            <div>
+              <span>Language: Python</span>
+              <span>Stargazers: ★ 88</span>
+              <span>Forks: 19</span>
+              <a href="https://github.com/pavanporiya/event-stream-pipeline" target="_blank" rel="noopener noreferrer" aria-label="View event-stream-pipeline on GitHub">View Repo</a>
+            </div>
+          </article>
+
+          <!-- Fallback Repository 3 -->
+          <article aria-labelledby="repo-title-3">
+            <div>
+              <h3 id="repo-title-3">
+                <a href="https://github.com/pavanporiya/api-gateway-limiter" target="_blank" rel="noopener noreferrer">api-gateway-limiter</a>
+              </h3>
+              <p>High-throughput API gateway middleware featuring distributed token-bucket rate limiting and OAuth2 token verification.</p>
+            </div>
+            <div>
+              <span>Language: TypeScript</span>
+              <span>Stargazers: ★ 105</span>
+              <span>Forks: 24</span>
+              <a href="https://github.com/pavanporiya/api-gateway-limiter" target="_blank" rel="noopener noreferrer" aria-label="View api-gateway-limiter on GitHub">View Repo</a>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" aria-label="Visit Pavan Poriya's full GitHub profile">Visit Full GitHub Profile →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 7: TIMELINE SECTION
+         ======================================================== -->
+    <section id="timeline" aria-labelledby="timeline-title">
+      <div>
+        <h2 id="timeline-title">Professional Experience & Career Timeline</h2>
+        <p>A chronological record of engineering positions, system responsibilities, and key accomplishments.</p>
+
+        <ol role="list">
+
+          <!-- Timeline Item 1 -->
+          <li>
+            <article aria-labelledby="role-title-1">
+              <header>
+                <div>
+                  <h3 id="role-title-1">Senior Software Engineer</h3>
+                  <p>Enterprise Technology Solutions</p>
+                </div>
+                <div>
+                  <time datetime="2022-01">January 2022</time> — <time datetime="2026-07">Present</time>
+                </div>
+                <p>Location: San Francisco, CA (Hybrid)</p>
+              </header>
+              <p>
+                Leading backend architecture initiatives for high-volume enterprise services, mentoring junior engineers, and driving system reliability best practices across distributed teams.
+              </p>
+              <div>
+                <h4>Key Technical Accomplishments</h4>
+                <ul role="list">
+                  <li>Architected and deployed distributed microservices platform processing 10M+ daily events with 99.99% system uptime SLA.</li>
+                  <li>Spearheaded backend latency optimization program, reducing P99 response times by 45% across core customer-facing APIs.</li>
+                  <li>Designed automated CI/CD pipeline deployment workflows with GitHub Actions and Docker, reducing build-to-production deployment times by 60%.</li>
+                  <li>Mentored team of 6 software engineers in clean code patterns, domain-driven design, and WCAG accessibility standards.</li>
+                </ul>
+              </div>
+            </article>
+          </li>
+
+          <!-- Timeline Item 2 -->
+          <li>
+            <article aria-labelledby="role-title-2">
+              <header>
+                <div>
+                  <h3 id="role-title-2">Software Engineer</h3>
+                  <p>Cloud Infrastructure & Systems Inc.</p>
+                </div>
+                <div>
+                  <time datetime="2019-06">June 2019</time> — <time datetime="2021-12">December 2021</time>
+                </div>
+                <p>Location: Austin, TX</p>
+              </header>
+              <p>
+                Developed scalable RESTful web APIs, containerized microservices, and high-concurrency database integration services.
+              </p>
+              <div>
+                <h4>Key Technical Accomplishments</h4>
+                <ul role="list">
+                  <li>Engineered high-concurrency RESTful APIs in Node.js, Go, and PostgreSQL handling over 2,000 requests per second.</li>
+                  <li>Successfully migrated legacy monolithic services into containerized Kubernetes pods on AWS, improving infrastructure utilization by 35%.</li>
+                  <li>Integrated automated unit and integration testing pipelines achieving 90%+ code coverage across critical service modules.</li>
+                </ul>
+              </div>
+            </article>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 8: CONTACT SECTION
+         ======================================================== -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div>
         <div>
           <h2 id="contact-title">Get in Touch</h2>
-          <p>Interested in discussing senior engineering opportunities, technical architecture consulting, or leadership roles? Send a direct inquiry.</p>
+          <p>
+            Interested in discussing senior engineering opportunities, system architecture consulting, or technical leadership roles? Reach out directly via email, phone, social networks, or the accessible contact form below.
+          </p>
 
-          <div class="contact__info-cards">
-            <div class="contact-card">
-              <div class="contact-card__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              </div>
-              <div>
-                <strong>Email Direct</strong>
-                <div>pavanporiya@gmail.com</div>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-card__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </div>
-              <div>
-                <strong>LinkedIn Network</strong>
-                <div><a href="https://linkedin.com/in/pavanporiya" target="_blank" rel="noopener noreferrer">linkedin.com/in/pavanporiya</a></div>
-              </div>
-            </div>
-          </div>
+          <!-- Direct Contact Information Cards -->
+          <article aria-labelledby="contact-direct-heading">
+            <h3 id="contact-direct-heading">Direct Contact Channels</h3>
+            <ul role="list">
+              <li>
+                <strong>Email Address:</strong>
+                <a href="mailto:pavanporiya303@gmail.com" aria-label="Send email to pavanporiya303@gmail.com">pavanporiya303@gmail.com</a>
+              </li>
+              <li>
+                <strong>Telephone:</strong>
+                <a href="tel:+919876543210" aria-label="Call +91 98765 43210">+91 98765 43210</a>
+              </li>
+              <li>
+                <strong>GitHub Profile:</strong>
+                <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" aria-label="Visit Pavan Poriya's GitHub profile">github.com/pavanporiya</a>
+              </li>
+              <li>
+                <strong>LinkedIn Profile:</strong>
+                <a href="https://linkedin.com/in/pavanporiya" target="_blank" rel="noopener noreferrer" aria-label="Visit Pavan Poriya's LinkedIn profile">linkedin.com/in/pavanporiya</a>
+              </li>
+            </ul>
+          </article>
         </div>
 
-        <form id="contact-form" class="form" novalidate>
-          <div class="form__group">
-            <label for="contact-name" class="form__label">Your Full Name *</label>
-            <input type="text" id="contact-name" name="name" class="form__input" required placeholder="e.g. Sarah Jenkins">
-          </div>
+        <!-- Accessible Contact Form -->
+        <div>
+          <form id="contact-form" action="#" method="POST" novalidate aria-labelledby="contact-form-heading">
+            <h3 id="contact-form-heading">Send a Direct Message</h3>
+            
+            <fieldset>
+              <legend class="sr-only">Contact Form Details</legend>
 
-          <div class="form__group">
-            <label for="contact-email" class="form__label">Corporate Email Address *</label>
-            <input type="email" id="contact-email" name="email" class="form__input" required placeholder="e.g. sarah@company.com">
-          </div>
+              <div>
+                <label for="contact-name">Full Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="contact-name" name="name" required aria-required="true" autocomplete="name" placeholder="e.g. Jane Doe">
+              </div>
 
-          <div class="form__group">
-            <label for="contact-message" class="form__label">Message / Opportunity Details *</label>
-            <textarea id="contact-message" name="message" class="form__textarea" required placeholder="Describe the role or project..."></textarea>
-          </div>
+              <div>
+                <label for="contact-email">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="contact-email" name="email" required aria-required="true" autocomplete="email" placeholder="e.g. jane@company.com">
+              </div>
 
-          <div id="form-feedback" aria-live="polite"></div>
+              <div>
+                <label for="contact-subject">Subject / Project Details</label>
+                <input type="text" id="contact-subject" name="subject" autocomplete="off" placeholder="e.g. Senior Software Engineer Opportunity">
+              </div>
 
-          <button type="submit" id="contact-submit-btn" class="btn btn--primary">Send Message</button>
-        </form>
+              <div>
+                <label for="contact-message">Message <span aria-hidden="true">*</span></label>
+                <textarea id="contact-message" name="message" rows="5" required aria-required="true" placeholder="Please describe the role, project, or inquiry..."></textarea>
+              </div>
+
+              <div id="form-feedback" aria-live="polite"></div>
+
+              <div>
+                <button type="submit" id="contact-submit-btn">Send Message</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer Landmark -->
-  <footer class="footer" role="contentinfo">
-    <div class="u-container footer__inner">
-      <div class="footer__text">
-        © 2026 Pavan Poriya. Designed & Engineered with Vanilla HTML5, CSS3, & ES6 JavaScript.
+  <!-- ========================================================
+       SECTION 9: FOOTER LANDMARK
+       ======================================================== -->
+  <footer id="site-footer" role="contentinfo">
+    <div>
+      <div>
+        <p>© 2026 Pavan Poriya. All rights reserved. Built with production-grade semantic HTML5 & Web Accessibility Standards.</p>
       </div>
 
-      <div class="footer__socials">
-        <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub Profile">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        </a>
-        <a href="https://linkedin.com/in/pavanporiya" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn Profile">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
+      <div>
+        <a href="#site-header" aria-label="Back to top of page">Back to Top ↑</a>
+      </div>
+
+      <div>
+        <ul role="list" aria-label="Social media connections">
+          <li>
+            <a href="https://github.com/pavanporiya" target="_blank" rel="noopener noreferrer" aria-label="Pavan Poriya GitHub Profile">GitHub</a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/pavanporiya" target="_blank" rel="noopener noreferrer" aria-label="Pavan Poriya LinkedIn Profile">LinkedIn</a>
+          </li>
+          <li>
+            <a href="mailto:pavanporiya303@gmail.com" aria-label="Email Pavan Poriya">Email</a>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>
-
-  <!-- Native HTML Project Case Study Modal Dialog -->
-  <dialog id="project-modal" class="modal" aria-labelledby="modal-title" aria-modal="true">
-    <div class="modal__header">
-      <h3 id="modal-title" class="modal__title">System Architecture Specification</h3>
-      <button id="modal-close-btn" class="modal__close-btn" aria-label="Close dialog">&times;</button>
-    </div>
-    <div class="modal__body">
-      <p>High-level system design metrics, fault-tolerance mechanisms, data consistency guarantees, and benchmark results.</p>
-    </div>
-    <div class="modal__footer">
-      <button class="btn btn--secondary" onclick="document.getElementById('project-modal').close()">Close</button>
-    </div>
-  </dialog>
 
 </body>
 </html>
