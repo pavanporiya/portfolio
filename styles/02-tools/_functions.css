@@ -1,0 +1,28 @@
+/* ==========================================================================
+   02-TOOLS / FUNCTIONS
+   Functional pure CSS utility functions and documentation mixins.
+   ========================================================================== */
+
+/* Utility container layout constraints */
+.u-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .u-container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .u-container {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}

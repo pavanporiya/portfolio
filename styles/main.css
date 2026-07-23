@@ -1,0 +1,40 @@
+/* ==========================================================================
+   MAIN STYLESHEET
+   ITCSS Specificity Stack Order:
+   01-Settings -> 02-Tools -> 03-Generic -> 04-Elements -> 05-Components -> 06-Utilities -> 07-Hacks
+   ========================================================================== */
+
+/* 01. Settings */
+@import "./01-settings/_variables.css";
+@import "./01-settings/_themes.css";
+
+/* 02. Tools */
+@import "./02-tools/_functions.css";
+
+/* 03. Generic */
+@import "./03-generic/_reset.css";
+@import "./03-generic/_normalize.css";
+
+/* 04. Elements */
+@import "./04-elements/_root.css";
+@import "./04-elements/_typography.css";
+
+/* 05. Components */
+@import "./05-components/_header.css";
+@import "./05-components/_hero.css";
+@import "./05-components/_metrics.css";
+@import "./05-components/_projects.css";
+@import "./05-components/_experience.css";
+@import "./05-components/_skills.css";
+@import "./05-components/_github.css";
+@import "./05-components/_contact.css";
+@import "./05-components/_footer.css";
+@import "./05-components/_modal.css";
+@import "./05-components/_buttons.css";
+
+/* 06. Utilities */
+@import "./06-utilities/_accessibility.css";
+@import "./06-utilities/_animations.css";
+
+/* 07. Hacks */
+@import "./07-hacks/_shims.css";

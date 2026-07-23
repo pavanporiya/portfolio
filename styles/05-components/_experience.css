@@ -1,0 +1,97 @@
+/* ==========================================================================
+   05-COMPONENTS / EXPERIENCE
+   Work experience timeline, role cards, company details, key highlights.
+   ========================================================================== */
+
+.experience {
+  padding: var(--space-16) 0;
+  background-color: var(--bg-secondary);
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: var(--space-8);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 11px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: var(--space-12);
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: calc(-1 * var(--space-8) + 3px);
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-primary);
+  border: 3px solid var(--accent-primary);
+  z-index: 1;
+}
+
+.timeline__content {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .timeline__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+.timeline__role {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+}
+
+.timeline__company {
+  color: var(--accent-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.timeline__period {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-mono);
+  color: var(--text-muted);
+}
+
+.timeline__bullets {
+  list-style: disc;
+  padding-left: var(--space-6);
+  color: var(--text-secondary);
+}
+
+.timeline__bullets li {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+}

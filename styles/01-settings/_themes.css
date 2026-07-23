@@ -1,0 +1,57 @@
+/* ==========================================================================
+   01-SETTINGS / THEMES
+   Semantic token bindings for Dark (Default) and Light color schemes.
+   ========================================================================== */
+
+/* Dark Theme (Default) */
+:root,
+html.dark {
+  --bg-primary:      var(--slate-950);
+  --bg-secondary:    var(--slate-900);
+  --bg-tertiary:     var(--slate-800);
+  --bg-glass:        rgba(15, 23, 42, 0.75);
+
+  --text-primary:    var(--slate-50);
+  --text-secondary:  var(--slate-400);
+  --text-muted:      var(--slate-500);
+  --text-inverse:    var(--slate-900);
+
+  --border-color:    rgba(255, 255, 255, 0.08);
+  --border-hover:    var(--teal-500);
+
+  --accent-primary:  var(--teal-400);
+  --accent-hover:    var(--teal-500);
+  --accent-surface:  rgba(20, 184, 166, 0.1);
+
+  --card-bg:         var(--slate-900);
+  --card-border:     rgba(255, 255, 255, 0.08);
+
+  --focus-ring:      var(--teal-400);
+  --shadow-color:    rgba(0, 0, 0, 0.5);
+}
+
+/* Light Theme Override */
+html.light {
+  --bg-primary:      #ffffff;
+  --bg-secondary:    var(--slate-50);
+  --bg-tertiary:     var(--slate-100);
+  --bg-glass:        rgba(255, 255, 255, 0.85);
+
+  --text-primary:    var(--slate-900);
+  --text-secondary:  var(--slate-600);
+  --text-muted:      var(--slate-500);
+  --text-inverse:    var(--slate-50);
+
+  --border-color:    var(--slate-200);
+  --border-hover:    var(--teal-600);
+
+  --accent-primary:  var(--teal-600);
+  --accent-hover:    var(--teal-700);
+  --accent-surface:  rgba(13, 148, 136, 0.08);
+
+  --card-bg:         #ffffff;
+  --card-border:     var(--slate-200);
+
+  --focus-ring:      var(--teal-600);
+  --shadow-color:    rgba(0, 0, 0, 0.08);
+}
